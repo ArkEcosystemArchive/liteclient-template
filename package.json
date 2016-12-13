@@ -1,0 +1,33 @@
+{
+  "name": "ark-liteclient-template",
+  "version": "1.0.0",
+  "description": "A template to help you started a ark lite client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arkecosystem/ark-liteclient-template.git"
+  },
+  "keywords": [
+    "ark",
+    "lite",
+    "client",
+    "javascript"
+  ],
+  "author": "fx thoorens",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arkecosystem/ark-liteclient-template/issues"
+  },
+  "homepage": "https://github.com/arkecosystem/ark-liteclient-template#readme",
+  "dependencies": {
+    "arkjs": "^0.2.0",
+    "bip39": "^2.2.0"
+  },
+  "build": "browserify app.js | uglifyjs > app.min.js",
+  "scripts": {
+    "watch":"watchify app.js -o 'uglifyjs > app.min.js'"
+  }
+}

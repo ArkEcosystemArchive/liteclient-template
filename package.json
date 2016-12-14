@@ -4,7 +4,9 @@
   "description": "A template to help you started a ark lite client",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "watchify -x arkjs -x bip39 app.js -o 'uglifyjs > dist/app.min.js'",
+    "build-dependencies": "browserify -r arkjs -r bip39 | uglifyjs > dist/dependencies.min.js",
+    "build": "browserify -x arkjs -x bip39 app.js | uglifyjs > dist/app.min.js"
   },
   "repository": {
     "type": "git",
@@ -25,9 +27,5 @@
   "dependencies": {
     "arkjs": "^0.2.0",
     "bip39": "^2.2.0"
-  },
-  "build": "browserify app.js | uglifyjs > app.min.js",
-  "scripts": {
-    "watch":"watchify app.js -o 'uglifyjs > app.min.js'"
   }
 }

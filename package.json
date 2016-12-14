@@ -4,7 +4,7 @@
   "description": "A template to help you started a ark lite client",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "watchify app.js -o 'uglifyjs > app.min.js'"
   },
   "repository": {
     "type": "git",
@@ -24,10 +24,8 @@
   "homepage": "https://github.com/arkecosystem/ark-liteclient-template#readme",
   "dependencies": {
     "arkjs": "^0.2.0",
-    "bip39": "^2.2.0"
+    "bip39": "^2.2.0",
+    "request": "^2.79.0"
   },
-  "build": "browserify app.js | uglifyjs > app.min.js",
-  "scripts": {
-    "watch":"watchify app.js -o 'uglifyjs > app.min.js'"
-  }
+  "build": "browserify app.js | uglifyjs > app.min.js"
 }

@@ -1,0 +1,6 @@
+table tbody#transactions tr td{
+  max-width: 100px;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

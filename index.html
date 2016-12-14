@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>ARK reloaded</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="app.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,8 +20,6 @@
     <![endif]-->
   </head>
   <body>
-    <body>
-
     <nav class="navbar">
       <div class="container">
         <div class="navbar-header">
@@ -50,23 +50,24 @@
       <div class="row">
         <div class="col-md-6">
           <div class="alert alert-warning">
-            <button  id="generateAccountc" class="btn btn-success">Generate random account</button>
+            <button  id="generateAccount" class="btn btn-success">Generate random account</button>
             <h4>Passphrase </h4>
             <span id="passphrase"></span>
             <h4>Address </h4>
             <span id="address"></span>
+            <div id="qrcode"></div>
           </div>
         </div>
 
         <div class="col-md-6">
-          <div class="alert alert-info">
+          <form id="queryTestnet" class="form alert alert-info">
             <input type="text" class="form-control" id="testnet_node" placeholder="Testnet Node" value="http://node1.arknet.cloud:4000">
             <br>
-            <button id="queryTestnet" class="btn btn-success">Get Testnet Height</button>
+            <input type="submit" class="btn btn-success" value="Get Testnet Height">
             <br>
             Height
             <h4 id="height"></h4>
-          </div>
+          </form>
         </div>
       </div>
 
@@ -74,11 +75,11 @@
 
         <div class="form-group col-lg-12">
           <h1>Check transactions</h1>
-          <form class="form">
+          <form class="form" id="checkTransactions">
             <label for="formaddress">Address</label>
             <input type="text" class="form-control" id="check_address" placeholder="Ark Address" value="5pHy9mpBZcqxbzetzkQjstBAkDN8aP4mYUReV4LSc9UeT664UA">
             <br>
-            <button id="checkTransactions" class="btn btn-success">Check</button>
+            <input type="submit" class="btn btn-success" value="Check">
           </form>
         </div>
 
@@ -86,19 +87,25 @@
           <table class="table table-condensed table-hover">
             <thead>
               <th>
-                type
+                Id
               </th>
               <th>
-                id
+                Type
+              </th>
+              <th>
+                From
+              </th>
+              <th>
+                To
               </th>
               <th>
                 SmartBridge
               </th>
               <th>
-                amount
+                Amount
               </th>
               <th>
-                fee
+                Fee
               </th>
             </thead>
 
@@ -121,11 +128,13 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
-    <script src="app.min.js"></script>
+    <script src="dist/dependencies.min.js"></script>
+    <script src="dist/app.min.js"></script>
 
     <script charset="utf-8">
 

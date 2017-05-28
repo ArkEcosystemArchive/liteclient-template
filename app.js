@@ -12,7 +12,10 @@ var testnetrequest = function(api, callback){
 $(window).ready(function(){
   $("button#generateAccount").click(function(){
     var passphrase = bip39.generateMnemonic();
-    var address = ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey)
+    var ecpair = ark.ECPair.fromSeed(passphrase, ark.networks.ark);
+
+    var publicKey = ecpair.getPublicKeyBuffer().toString('hex');
+    var address = ecpair.getAddress().toString('hex');
     $("#passphrase").html(passphrase);
     $("#address").html(address);
     $('#qrcode').html("");

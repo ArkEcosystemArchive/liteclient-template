@@ -1,7 +1,7 @@
 var bip39 = require("bip39");
 var ark = require("arkjs");
 
-var testnetapi = "http://node1.arknet.cloud:4000/api/"
+var testnetapi = "https://node1.arknet.cloud"
 
 var testnetrequest = function(api, callback){
   $.getJSON(testnetapi + api, function(data) {

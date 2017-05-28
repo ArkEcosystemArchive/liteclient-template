@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/arkecosystem/ark-liteclient-template#readme",
   "dependencies": {
-    "arkjs": "^0.2.0",
+    "arkjs": "git://github.com/ArkEcosystem/ark-js#master",
     "bip39": "^2.2.0"
   }
 }

@@ -3,7 +3,7 @@
 ## installation
 1. install a recent version of NodeJS
 2. clone this repository: `git clone https://github.com/arkecosystem/ark-liteclient-template`
-3. install build components: `npm install -g browserify uglifyjs watchify`
+3. install build components: `npm install -g browserify uglify-js watchify`
 4. install dependencies: `npm install`
 5. build the dependencies: `npm run build-dependencies`
 6. build app.js: `npm run build`
